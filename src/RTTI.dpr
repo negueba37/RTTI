@@ -2,7 +2,9 @@ program RTTI;
 
 uses
   Vcl.Forms,
-  View.Principal in 'View\View.Principal.pas' {Form1};
+  View.Principal in 'View\View.Principal.pas' {Form1},
+  Model.RTTI in 'Model\Model.RTTI.pas',
+  Model.Entities.Produto in 'Model\Entities\Model.Entities.Produto.pas';
 
 {$R *.res}
 

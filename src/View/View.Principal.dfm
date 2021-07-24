@@ -13,4 +13,20 @@ object Form1: TForm1
   OldCreateOrder = False
   PixelsPerInch = 96
   TextHeight = 13
+  object Memo1: TMemo
+    Left = 176
+    Top = 8
+    Width = 263
+    Height = 169
+    TabOrder = 0
+  end
+  object Button1: TButton
+    Left = 8
+    Top = 8
+    Width = 113
+    Height = 25
+    Caption = 'Mostrar Produto'
+    TabOrder = 1
+    OnClick = Button1Click
+  end
 end
