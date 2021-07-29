@@ -25,8 +25,33 @@ object Form1: TForm1
     Top = 8
     Width = 113
     Height = 25
-    Caption = 'Mostrar Produto'
+    Caption = 'Insert Produto'
     TabOrder = 1
     OnClick = Button1Click
+  end
+  object Button2: TButton
+    Left = 8
+    Top = 39
+    Width = 113
+    Height = 25
+    Caption = 'Delete Produto'
+    TabOrder = 2
+    OnClick = Button2Click
+  end
+  object Button3: TButton
+    Left = 8
+    Top = 70
+    Width = 113
+    Height = 25
+    Caption = 'Insert Produto'
+    TabOrder = 3
+  end
+  object Button4: TButton
+    Left = 8
+    Top = 101
+    Width = 113
+    Height = 25
+    Caption = 'Insert Produto'
+    TabOrder = 4
   end
 end

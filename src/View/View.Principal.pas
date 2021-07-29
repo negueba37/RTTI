@@ -11,7 +11,11 @@ type
   TForm1 = class(TForm)
     Memo1: TMemo;
     Button1: TButton;
+    Button2: TButton;
+    Button3: TButton;
+    Button4: TButton;
     procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -29,13 +33,38 @@ procedure TForm1.Button1Click(Sender: TObject);
 var
   Produto:TModelEntitiesProduto;
   i: Integer;
+  RTTI:TRTTI;
 begin
+  RTTI := TRTTI.Create;
   Produto := TModelEntitiesProduto.Create;
+  Produto.Codigo := 10;
+  Produto.Nome := 'Teste';
+  Produto.Preco := 1000;
+  Produto.DataValidade := DateToStr(date);
   try
-    Memo1.Lines.Add(TRTTI.GetInsert<TModelEntitiesProduto>(Produto))
+    Memo1.Lines.Add(RTTI.GetInsert<TModelEntitiesProduto>(Produto))
   finally
     Produto.Free;
+    RTTI.Free;
   end;
+end;
+
+procedure TForm1.Button2Click(Sender: TObject);
+var
+  Produto:TModelEntitiesProduto;
+  i: Integer;
+  RTTI:TRTTI;
+begin
+  RTTI := TRTTI.Create;
+  Produto := TModelEntitiesProduto.Create;
+  Produto.Codigo := 10;
+  try
+    Memo1.Lines.Add(RTTI.GetDelete<TModelEntitiesProduto>(Produto))
+  finally
+    Produto.Free;
+    RTTI.Free;
+  end;
+
 end;
 
 end.

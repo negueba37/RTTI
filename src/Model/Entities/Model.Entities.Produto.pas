@@ -10,19 +10,20 @@ uses Model.RTTI;
     FPreco: Currency;
     FCodigo: Integer;
     FNome: string;
-    FDataValidade: TDate;
+    FDataValidade: string;
     procedure SetCodigo(const Value: Integer);
-    procedure SetDataValidade(const Value: TDate);
+    procedure SetDataValidade(const Value: string);
     procedure SetNome(const Value: string);
     procedure SetPreco(const Value: Currency);
     function  GetCodigo:Integer;
-    function  GetDataValidade:TDate;
+    function  GetDataValidade:string;
     function  GetNome:string;
     function  GetPreco:Currency;
 
   public
     constructor Create;
     destructor Destroy; override;
+
     [SetORM(PK,tpInteger)]
     property Codigo:Integer read GetCodigo write SetCodigo;
 
@@ -33,7 +34,7 @@ uses Model.RTTI;
     property Preco:Currency read GetPreco write SetPreco;
 
     [SetORM(Ignore,tpDate,'DT_VALIDADE')]
-    property DataValidade:TDate read GetDataValidade write SetDataValidade;
+    property DataValidade:string read GetDataValidade write SetDataValidade;
   end;
 implementation
 
@@ -55,7 +56,7 @@ begin
   Result := FCodigo;
 end;
 
-function TModelEntitiesProduto.GetDataValidade: TDate;
+function TModelEntitiesProduto.GetDataValidade: string;
 begin
   Result := FDataValidade;
 end;
@@ -75,7 +76,7 @@ begin
   FCodigo := Value;
 end;
 
-procedure TModelEntitiesProduto.SetDataValidade(const Value: TDate);
+procedure TModelEntitiesProduto.SetDataValidade(const Value: string);
 begin
   FDataValidade := Value;
 end;
